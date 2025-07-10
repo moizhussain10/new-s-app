@@ -15,12 +15,7 @@ function searchNews() {
     .then((res) => res.json())
     .then((data) => {
       content.innerHTML = ""; // clear loading text
-
-      if (data.articles.length === 0) {
-        content.innerHTML = `<p>No articles found for "<b>${query}</b>".</p>`;
-        return;
-      }
-
+      
       data.articles.forEach((a) => {
         content.innerHTML += `
           <div class="product-card">
